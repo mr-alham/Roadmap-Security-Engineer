@@ -277,7 +277,7 @@ func show_default() {
 					"\n > " + TopicDescription
 
 				halfWidth := strings.Repeat(" ", (width-30)/2)
-				fmt.Println(halfWidth, "\033[0;38;5;159m────── \033[0;38;5;210;1m✨ Day", *progress, "✨ \033[0;38;5;159m──────")
+				fmt.Println("\n", halfWidth, "\033[0;38;5;159m────── \033[0;38;5;210;1m✨ Day", *progress, "✨ \033[0;38;5;159m──────")
 
 				halfWidth = strings.Repeat("─", (width-len(Category)-8)/2)
 				result, _ := r.Render(RawResult)
