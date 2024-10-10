@@ -1,0 +1,62 @@
+---
+name: Release the build to GitHub
+
+on:
+  push:
+    branches: main
+    paths: main.go
+  pull_request:
+    branches: main
+    paths: main.go
+
+jobs:
+  Build-and-Release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: "./go.mod"
+          check-latest: true
+
+      - name: Module Maintanance
+        run: go mod tidy
+      - run: go mod verify
+
+      - name: Build
+        run: go build -a -o roadmap-sec-engineer
+
+      - name: Add Executable Permissions
+        run: chmod +x roadmap-sec-engineer
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v1.0.${{ github.run_number }}"
+          release_name: Roadmap-Security-Engineer
+          draft: false
+          prerelease: false
+          body: Automated Release.
+
+      - name: Archive the app and config directory
+        run: zip -r Roadmap-App.zip roadmap-sec-engineer roadmap-sec-engineer.d
+
+      - name: Upload Release Binary
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./Roadmap-App.zip"
+          asset_name: Roadmap-App.zip
+          asset_content_type: application/zip
