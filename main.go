@@ -30,8 +30,8 @@ type RoadmapJsonData struct {
 }
 
 // File paths
-var roadmapJsonFile string = "/usr/local/etc/roadmap-sec-engineer/roadmap.json"
-var learningStateFile string = "/usr/local/etc/roadmap-sec-engineer/learning-state.state"
+var roadmapJsonFile string = "/usr/local/etc/roadmap-sec-engineer.d/roadmap.json"
+var learningStateFile string = "/usr/local/etc/roadmap-sec-engineer.d/learning-state.state"
 
 func main() {
 
