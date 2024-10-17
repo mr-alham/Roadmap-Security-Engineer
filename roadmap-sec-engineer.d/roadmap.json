@@ -12,15 +12,21 @@
               "Confidentiality": {
                 "What to Study": "Encryption algorithms (AES, RSA), access control models (DAC, MAC, RBAC), and data obfuscation.",
                 "Practical Project": "Encrypt data using GPG or OpenSSL. Implement RBAC in Linux using sudo and user roles."
-              },
+              }
+            },
+            {
               "Integrity": {
                 "What to Study": "Hashing algorithms (SHA, MD5), digital signatures, and file integrity monitoring.",
                 "Practical Project": "Monitor file integrity with Tripwire or AIDE and simulate integrity breaches."
-              },
+              }
+            },
+            {
               "Availability": {
                 "What to Study": "Redundancy, backups, disaster recovery, and availability in cloud environments.",
                 "Practical Project": "Simulate a DoS attack with hping3 and configure `fail2ban` to mitigate it."
-              },
+              }
+            },
+            {
               "Security Models": {
                 "What to Study": "Bell-LaPadula, Biba, and Clark-Wilson models for ensuring confidentiality and integrity.",
                 "Practical Project": "Implement Bell-LaPadula's mandatory access control using SELinux on a Linux system."
@@ -36,15 +42,21 @@
               "Risk Identification": {
                 "What to Study": "Understand operational, compliance, and reputational risks in an organization.",
                 "Practical Project": "Perform risk identification on a small network using Nmap."
-              },
+              }
+            },
+            {
               "Risk Assessment": {
                 "What to Study": "Conduct qualitative and quantitative risk assessments.",
                 "Practical Project": "Model threats and assess vulnerabilities using OWASP Threat Dragon."
-              },
+              }
+            },
+            {
               "Risk Mitigation": {
                 "What to Study": "Study mitigation strategies: risk avoidance, transference, and acceptance.",
                 "Practical Project": "Implement security controls like firewalls and intrusion detection/prevention systems."
-              },
+              }
+            },
+            {
               "Risk Monitoring": {
                 "What to Study": "Ongoing risk monitoring and response plans.",
                 "Practical Project": "Use a SIEM tool like Splunk to continuously monitor security risks."
@@ -60,11 +72,15 @@
               "Authentication": {
                 "What to Study": "Password-based, MFA, and public key infrastructure (PKI).",
                 "Practical Project": "Configure SSH server for public key authentication and implement MFA."
-              },
+              }
+            },
+            {
               "Authorization": {
                 "What to Study": "Access control models and enforcing authorization policies.",
                 "Practical Project": "Implement RBAC in Django/Flask for web applications."
-              },
+              }
+            },
+            {
               "Accounting": {
                 "What to Study": "Log user activities, audit trails, and track system access.",
                 "Practical Project": "Configure `auditd` to monitor system logins and sensitive file access."
@@ -80,11 +96,15 @@
               "Symmetric Encryption": {
                 "What to Study": "AES, DES, and 3DES algorithms and key management.",
                 "Practical Project": "Encrypt and decrypt files using AES in OpenSSL."
-              },
+              }
+            },
+            {
               "Asymmetric Encryption": {
                 "What to Study": "RSA, ECC, public/private key pairs, digital signatures.",
                 "Practical Project": "Generate RSA keys and encrypt/decrypt data with OpenSSL."
-              },
+              }
+            },
+            {
               "Hashing Algorithms": {
                 "What to Study": "SHA-256, SHA-3, and their use in data integrity.",
                 "Practical Project": "Create a Python file integrity checker using the hashlib library."
@@ -106,7 +126,9 @@
               "User and Group Permissions": {
                 "What to Study": "Linux user management, file permissions, and ACLs.",
                 "Practical Project": "Create and manage users, implement ACLs for file-level access."
-              },
+              }
+            },
+            {
               "Privilege Escalation": {
                 "What to Study": "How attackers escalate privileges in Linux systems.",
                 "Practical Project": "Simulate privilege escalation attacks in a Linux environment and implement mitigations."
@@ -122,7 +144,9 @@
               "SELinux Basics": {
                 "What to Study": "SELinux policies, contexts, and enforcing security rules.",
                 "Practical Project": "Enable and configure SELinux in enforcing mode, create custom policies."
-              },
+              }
+            },
+            {
               "AppArmor": {
                 "What to Study": "Learn how AppArmor restricts application behavior.",
                 "Practical Project": "Set up and configure AppArmor for process isolation on Ubuntu."
@@ -138,7 +162,9 @@
               "iptables/nftables": {
                 "What to Study": "Linux firewall basics, configuring iptables and nftables.",
                 "Practical Project": "Set up iptables and transition to nftables for a server."
-              },
+              }
+            },
+            {
               "SSH Hardening": {
                 "What to Study": "Securing SSH with key-based authentication, port knocking, and fail2ban.",
                 "Practical Project": "Harden SSH access using key-based login, and set up fail2ban to block brute-force attempts."
@@ -160,7 +186,9 @@
               "AWS IAM": {
                 "What to Study": "Least privilege, roles, policies, and MFA in AWS IAM.",
                 "Practical Project": "Set up least privilege roles and enforce MFA for an AWS environment."
-              },
+              }
+            },
+            {
               "Azure IAM": {
                 "What to Study": "Manage users, groups, and roles in Azure Active Directory.",
                 "Practical Project": "Set up role-based access control (RBAC) in Azure."
@@ -176,7 +204,9 @@
               "AWS VPC Security": {
                 "What to Study": "VPCs, security groups, and network ACLs in AWS.",
                 "Practical Project": "Create a VPC and secure subnets with security groups and NACLs."
-              },
+              }
+            },
+            {
               "Azure Network Security": {
                 "What to Study": "Azure Network Security Groups (NSGs), VNets, and DDoS protection.",
                 "Practical Project": "Set up a secure Azure Virtual Network with NSGs and DDoS protection."
@@ -258,7 +288,9 @@
               "Kernel Hardening": {
                 "What to Study": "Use sysctl for kernel parameter security, apply patches.",
                 "Practical Project": "Harden kernel settings and audit system logs using `auditd`."
-              },
+              }
+            },
+            {
               "Advanced Logging": {
                 "What to Study": "Log auditing, rotation, and analysis using journald, rsyslog, and logwatch.",
                 "Practical Project": "Set up centralized logging using rsyslog and automate log analysis with custom scripts."
@@ -328,6 +360,210 @@
               "DNSSEC and Hardening": {
                 "What to Study": "Understand DNSSEC, securing DNS against attacks.",
                 "Practical Project": "Set up DNSSEC on a DNS server and configure it for secure queries."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Offensive Operations",
+      "DESCRIPTION": "Develop skills in penetration testing and offensive security to strengthen defensive strategies.",
+      "TOPICS": [
+        {
+          "TOPIC": "Web Application Penetration Testing",
+          "DESCRIPTION": "Learn to find vulnerabilities in web applications.",
+          "SUBTOPICS": [
+            {
+              "SQL Injection and XSS": {
+                "What to Study": "Explore OWASP Top 10 vulnerabilities, including SQL injection and cross-site scripting (XSS).",
+                "Practical Project": "Test for SQL injection on a vulnerable web app like DVWA. Use Burp Suite to automate scans and find XSS."
+              }
+            },
+            {
+              "Authentication Flaws": {
+                "What to Study": "Understand weak authentication mechanisms.",
+                "Practical Project": "Simulate a brute-force attack using Hydra on a login form and mitigate it."
+              }
+            }
+          ]
+        },
+        {
+          "TOPIC": "Cloud Penetration Testing",
+          "DESCRIPTION": "Test cloud environments for vulnerabilities and misconfigurations.",
+          "SUBTOPICS": [
+            {
+              "AWS Penetration Testing": {
+                "What to Study": "Learn about misconfigured IAM roles, public S3 buckets, and exposed cloud services.",
+                "Practical Project": "Perform penetration testing on AWS using tools like ScoutSuite and Pacu to identify misconfigurations."
+              }
+            },
+            {
+              "Azure Penetration Testing": {
+                "What to Study": "Test Azure-based environments for security gaps in VNets, Azure AD, and storage accounts.",
+                "Practical Project": "Set up a lab environment in Azure and test it for common vulnerabilities using Azure's Security Center."
+              }
+            }
+          ]
+        },
+        {
+          "TOPIC": "Exploit Development",
+          "DESCRIPTION": "Learn how to write exploits to understand vulnerabilities in-depth.",
+          "SUBTOPICS": [
+            {
+              "Buffer Overflows": {
+                "What to Study": "Learn buffer overflow attacks and how to develop simple exploits.",
+                "Practical Project": "Write a buffer overflow exploit for a vulnerable C program using GDB and Immunity Debugger."
+              }
+            },
+            {
+              "Return-Oriented Programming (ROP)": {
+                "What to Study": "Advanced exploit techniques using ROP chains.",
+                "Practical Project": "Develop a ROP-based exploit on a vulnerable Linux application."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Incident Response and Forensics",
+      "DESCRIPTION": "Master forensic techniques to investigate incidents and prevent further damage.",
+      "TOPICS": [
+        {
+          "TOPIC": "Network Forensics",
+          "DESCRIPTION": "Analyze network traffic to identify malicious activities.",
+          "SUBTOPICS": [
+            {
+              "Packet Capture Analysis": {
+                "What to Study": "Learn to analyze network packets using tcpdump, Wireshark, and Zeek.",
+                "Practical Project": "Capture and analyze network traffic in a simulated incident scenario to detect anomalies."
+              }
+            },
+            {
+              "DNS and HTTP Analysis": {
+                "What to Study": "Examine DNS tunneling and HTTP-based attacks.",
+                "Practical Project": "Analyze DNS traffic to identify tunneling activity and simulate an HTTP-based attack using Burp Suite."
+              }
+            }
+          ]
+        },
+        {
+          "TOPIC": "Linux Forensics",
+          "DESCRIPTION": "Investigate Linux-based attacks using specialized tools.",
+          "SUBTOPICS": [
+            {
+              "Log and File System Analysis": {
+                "What to Study": "Learn to analyze logs, file metadata, and changes in file systems.",
+                "Practical Project": "Use tools like `Autopsy`, `Sleuth Kit`, and `log2timeline` to analyze a compromised Linux server."
+              }
+            },
+            {
+              "Memory Forensics": {
+                "What to Study": "Analyze memory dumps to find malware and active connections.",
+                "Practical Project": "Capture memory using `volatility` and extract artifacts from an infected Linux machine."
+              }
+            }
+          ]
+        },
+        {
+          "TOPIC": "Cloud Forensics",
+          "DESCRIPTION": "Forensically investigate incidents in cloud environments.",
+          "SUBTOPICS": [
+            {
+              "AWS Forensics": {
+                "What to Study": "Investigate compromised AWS accounts and services.",
+                "Practical Project": "Use AWS CloudTrail logs to investigate a security incident, including unauthorized access to S3 buckets."
+              }
+            },
+            {
+              "Azure Forensics": {
+                "What to Study": "Analyze Azure logs for signs of a breach in the cloud environment.",
+                "Practical Project": "Investigate an incident using Azure Sentinel, focusing on log analysis and alerting."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Advanced Cyber Defense",
+      "DESCRIPTION": "Learn advanced techniques to defend against sophisticated cyber attacks.",
+      "TOPICS": [
+        {
+          "TOPIC": "Network Traffic Analysis",
+          "DESCRIPTION": "Detect and mitigate threats through real-time traffic monitoring.",
+          "SUBTOPICS": [
+            {
+              "SIEM and IDS Integration": {
+                "What to Study": "Integrate intrusion detection systems (IDS) with a SIEM for advanced monitoring.",
+                "Practical Project": "Set up Suricata with ELK or Splunk and write detection rules to identify malicious network traffic."
+              }
+            }
+          ]
+        },
+        {
+          "TOPIC": "Purple Teaming",
+          "DESCRIPTION": "Collaborate between offensive and defensive teams to strengthen security.",
+          "SUBTOPICS": [
+            {
+              "Adversary Simulation": {
+                "What to Study": "Simulate attacks and test the effectiveness of defensive controls.",
+                "Practical Project": "Use MITRE ATT&CK to simulate a cyber attack and create a report on the defensive gaps found."
+              }
+            },
+            {
+              "Red-Blue Team Collaboration": {
+                "What to Study": "Collaborate between red and blue teams to improve detection and response.",
+                "Practical Project": "Simulate an attack in a controlled environment and collaborate with a blue team to harden the environment."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Cloud Security and Automation",
+      "DESCRIPTION": "Secure cloud environments and automate security tasks.",
+      "TOPICS": [
+        {
+          "TOPIC": "Cloud Security Automation",
+          "DESCRIPTION": "Automate security tasks to enhance cloud defense.",
+          "SUBTOPICS": [
+            {
+              "Automating Cloud Threat Detection": {
+                "What to Study": "Learn to automate security tasks such as auditing, monitoring, and compliance.",
+                "Practical Project": "Set up automated monitoring and alerting using AWS Config, AWS Lambda, and GuardDuty."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Specialized Areas",
+      "DESCRIPTION": "Deep-dive into niche and emerging cybersecurity topics.",
+      "TOPICS": [
+        {
+          "TOPIC": "Blockchain Security",
+          "DESCRIPTION": "Explore the security of blockchain and smart contracts.",
+          "SUBTOPICS": [
+            {
+              "Smart Contract Auditing": {
+                "What to Study": "Learn to audit smart contracts for vulnerabilities.",
+                "Practical Project": "Audit a simple smart contract for vulnerabilities using tools like Mythril."
+              }
+            }
+          ]
+        },
+        {
+          "TOPIC": "Machine Learning in Security",
+          "DESCRIPTION": "Leverage machine learning for threat detection and prevention.",
+          "SUBTOPICS": [
+            {
+              "Anomaly Detection Using ML": {
+                "What to Study": "Use machine learning models to detect network anomalies.",
+                "Practical Project": "Train an anomaly detection model using Python and scikit-learn, then apply it to real network traffic."
               }
             }
           ]
