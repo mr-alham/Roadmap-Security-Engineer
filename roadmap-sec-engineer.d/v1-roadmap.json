@@ -1,0 +1,415 @@
+{
+  "CATEGORIES": [
+    {
+      "CATEGORY": "Foundational Knowledge in Security",
+      "DESCRIPTION": "This covers the essential principles, concepts, and techniques you need to master before delving into specific areas like network security, application security, and cloud security.",
+      "TOPICS": [
+        {
+          "TOPIC": "Security Principles and CIA Triad",
+          "DESCRIPTION": "The CIA Triad (Confidentiality, Integrity, and Availability) forms the core of security policies and practices.",
+          "SUBTOPICS": [
+            {
+              "Confidentiality": "* **What to Study**: Learn about encryption, access control models (e.g., DAC, MAC, RBAC), and data masking techniques. \n- **Practical Project**: Encrypt a file using OpenSSL on Linux and implement access control lists (ACLs) to ensure only authorized users can access the file. \n"
+            },
+            {
+              "Integrity": "* **What to Study**: Study hashing algorithms (SHA, MD5), digital signatures, and file integrity monitoring. \n- **Practical Project**: Use `Tripwire` or `AIDE` to monitor file integrity on a Linux system. Modify files and see how the tool detects integrity violations. \n"
+            },
+            {
+              "Availability": "* **What to Study**: Focus on redundancy, backups, disaster recovery planning, and DoS (Denial of Service) attacks. \n- **Practical Project**: Simulate a DoS attack on a local machine using `hping3` and configure a service like `fail2ban` to mitigate it."
+            },
+            {
+              "Security Models": "* **What to Study**: Study the Bell-LaPadula, Biba, and Clark-Wilson models to understand how different policies ensure confidentiality, integrity, and availability. \n- **Practical Project**: Implement role-based access control (RBAC) in Linux using sudo policies and different user roles. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Risk Management",
+          "DESCRIPTION": "Risk management involves identifying, assessing, and mitigating security risks in an organization.",
+          "SUBTOPICS": [
+            {
+              "Risk Identification": "* **What to Study**: Understand the various types of risks (e.g., operational, strategic, compliance, reputational) and learn how to identify them. \n- **Practical Project**: Perform a risk assessment for a small network. Identify risks related to hardware, software, and network configurations using tools like `nmap`. \n"
+            },
+            {
+              "Risk Assessment": "* **What to Study**: Learn about qualitative and quantitative risk assessment techniques. Focus on understanding threat modeling and vulnerability assessments. \n- **Practical Project**: Conduct a threat modeling exercise for a web application using tools like OWASP Threat Dragon. Identify and rate risks based on likelihood and impact. \n"
+            },
+            {
+              "Risk Mitigation": "* **What to Study**: Study different risk mitigation strategies (e.g., avoidance, transference, mitigation, acceptance). \n- **Practical Project**: Create a risk mitigation plan for an organization and apply security controls like firewalls and intrusion detection systems (IDS) to reduce risk. \n"
+            },
+            {
+              "Risk Monitoring and Review": "* **What to Study**: Learn how to monitor risk over time and adjust risk management strategies based on new threats. \n- **Practical Project**: Use a SIEM (Security Information and Event Management) tool like `Splunk` or `ELK Stack` to continuously monitor network traffic for threats. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Authentication, Authorization, and Accounting (AAA)",
+          "DESCRIPTION": "These three concepts ensure that users are who they say they are, have access to the right resources, and their activities are tracked.",
+          "SUBTOPICS": [
+            {
+              "Authentication": "* **What to Study**: Study different authentication mechanisms like passwords, multi-factor authentication _(MFA)_, and public key infrastructure _(PKI)_. \n- **Practical Project**: Set up an SSH server that uses public key authentication instead of passwords. Implement MFA using Google Authenticator. \n"
+            },
+            {
+              "Authorization": "* **What to Study**: Learn about access control models _(RBAC, ABAC, etc.)_ and how authorization policies are enforced. \n- **Practical Project**: Implement role-based access control _(RBAC)_ in a web application using frameworks like Django or Flask. \n"
+            },
+            {
+              "Accounting": "* **What to Study**: Study how to log and track user actions for accountability using audit trails and logging systems. \n- **Practical Project**: Set up `auditd` on Linux to monitor and log changes to sensitive files, user logins, and system modifications. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Cryptography",
+          "DESCRIPTION": "Cryptography is the practice of securing communication and data through encryption and decryption.",
+          "SUBTOPICS": [
+            {
+              "Symmetric Encryption": "* **What to Study**: Learn about symmetric encryption algorithms like AES, DES, and 3DES. Understand how keys are used to encrypt and decrypt data. \n- **Practical Project**: Encrypt and decrypt files using AES in OpenSSL. Compare encryption speed and security between AES and 3DES. \n"
+            },
+            {
+              "Asymmetric Encryption": "* **What to Study**: Study how public and private keys are used in RSA and ECC encryption. Learn about digital signatures and certificates. \n- **Practical Project**: Generate a pair of RSA keys using OpenSSL. Use the public key to encrypt a message and the private key to decrypt it. \n"
+            },
+            {
+              "Hashing Algorithms": "* **What to Study**: Understand how hashing algorithms like MD5, SHA-256, and SHA-3 work. Learn about their applications in verifying data integrity. \n- **Practical Project**: Create a simple file integrity checker in Python using the `hashlib` library to compare file hashes before and after modifications. \n"
+            },
+            {
+              "Public Key Infrastructure (PKI)": "* **What to Study**: Learn how certificates, Certificate Authorities _(CAs)_, and digital signatures work in securing communications. \n- **Practical Project**: Set up a local Certificate Authority _(CA)_ using `OpenSSL` to sign and issue SSL/TLS certificates for internal websites or services. \n"
+            },
+            {
+              "Cryptographic Attacks": "* **What to Study**: Study attacks like brute force, birthday attacks, man-in-the-middle _(MITM_)*, and cryptanalysis techniques. \n- **Practical Project**: Simulate a brute-force attack on a weakly hashed password using `John the Ripper`. Implement mitigation techniques like salting and key stretching _(e.g., PBKDF2_)*. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Security Policies and Procedures",
+          "DESCRIPTION": "Security policies guide organizations in maintaining secure practices across their systems and processes.",
+          "SUBTOPICS": [
+            {
+              "Security Policies": "* **What to Study**: Study the different types of security policies, such as acceptable use policies, access control policies, and incident response policies. \n* **Practical Project**: Draft a sample security policy for a small company. Focus on access control, acceptable use of company resources, and password policies. \n"
+            },
+            {
+              "Incident Response": "* **What to Study**: Learn about the incident response lifecycle: preparation, detection, containment, eradication, recovery, and post-incident activities. \n- **Practical Project**: Create an incident response playbook that includes steps to handle a malware outbreak. Use tools like `Wireshark` to monitor network traffic during an incident. \n"
+            },
+            {
+              "Disaster Recovery and Business Continuity Planning": "* **What to Study**: Understand the importance of having a disaster recovery plan _(DRP_)_ and business continuity plan _(BCP)_. Learn about recovery time objectives _(RTO)_ and recovery point objectives _(RPO)_. \n- **Practical Project**: Create a basic disaster recovery plan for a hypothetical company that includes data backup strategies and recovery testing. \n"
+            },
+            {
+              "Security Awareness Training": "* **What to Study**: Study the importance of training employees on security policies, social engineering threats, and phishing attacks. \n- **Practical Project**: Design a security awareness program for a company that focuses on phishing attack prevention and strong password policies. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Threats and Vulnerabilities",
+          "DESCRIPTION": "This topic covers various types of threats and vulnerabilities, how they are exploited, and how to mitigate them.",
+          "SUBTOPICS": [
+            {
+              "Types of Threats": "* **What to Study**: Learn about internal and external threats, human threats _(e.g., social engineering, phishing)_, and software threats _(e.g., malware, ransomware)_. \n- **Practical Project**: Conduct a phishing simulation by creating a mock phishing email and measuring user responses. Implement security awareness training for users. \n"
+            },
+            {
+              "Vulnerabilities": "* **What to Study**: Study common vulnerabilities, such as buffer overflows, cross-site scripting _(XSS)_, SQL injection, and misconfigurations. \n- **Practical Project**: Set up a vulnerable web application using `DVWA` _(Damn Vulnerable Web App)_ and practice exploiting and fixing common vulnerabilities like SQL injection and XSS. \n"
+            },
+            {
+              "Exploit Mitigation Techniques": "* **What to Study**: Learn about mitigation techniques like ASLR _(Address Space Layout Randomization)_, DEP _(Data Execution Prevention)_, and sandboxing. \n- **Practical Project**: Use a tool like `Metasploit` to exploit a vulnerable service and then apply mitigations _(e.g., ASLR)_ to prevent the attack. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Network Security",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "Firewalls",
+          "DESCRIPTION": "A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization’s security policies.",
+          "SUBTOPICS": [
+            {
+              "Types of Firewalls": "* **Packet Filtering Firewalls**: Basic firewall that inspects packets individually, focusing on headers (IP address, port number, etc.). \n\n  - **What to Study**: Learn how packet filtering firewalls work, how they process each packet independently, and what Layer 3 and Layer 4 information is relevant. Study stateless vs stateful filtering. \n\n  - **Practical Project**: Configure `iptables` in Linux to block specific IPs and ports using packet filtering rules. \n\n- **Stateful Firewalls**: Maintain state information of a connection (track state of active connections). \n\n  - **What to Study**: Focus on how stateful firewalls can track active connections and allow or block packets based on the state of the connection. \n\n  - **Practical Project**: Set up `UFW` (Uncomplicated Firewall) on Linux to manage inbound and outbound traffic based on the connection state. \n\n- **Application Layer Firewalls**: Inspect packets beyond Layers 3 and 4, working at the application layer (Layer 7). \n\n  - **What to Study**: Focus on how application layer firewalls analyze the payload of packets to filter specific application protocols (like HTTP, DNS). \n\n  - **Practical Project**: Install and configure `Squid` proxy as an application-layer firewall and block specific websites based on URL patterns. \n\n- **Next-Generation Firewalls (NGFWs)**: Incorporate packet inspection with features like intrusion prevention, malware detection, etc. \n\n  - **What to Study**: Research the capabilities of NGFWs, including threat detection, deep packet inspection, and intrusion prevention. \n\n  - **Practical Project**: Set up a virtual NGFW using Palo Alto Networks' VM-Series in AWS or simulate using `pfSense` with Snort for IPS/IDS features. \n\n"
+            },
+            {
+              "Firewall Architectures": "* **Proxy Firewalls**: Act as intermediaries between users and resources. \n\n  - **What to Study**: Understand how proxy firewalls work to filter traffic between the client and server. \n  - **Practical Project**: Set up a proxy firewall with `HAProxy` to inspect and manage HTTP/S traffic. \n\n- **Dual-Homed Gateway**: Firewalls that have two network interfaces, separating an internal network from an external one. \n\n  - **What to Study**: Research how dual-homed gateways act as a barrier between internal and external networks. \n  - **Practical Project**: Configure a dual-homed firewall using `pfSense` to route traffic securely between two network interfaces. \n\n"
+            },
+            {
+              "Firewall Rule Management": "* **Rule Syntax and Configuration**: Learning to write effective firewall rules. \n\n  - **What to Study**: Focus on writing rules that define allowed and denied traffic, based on IP addresses, protocols, and ports. \n  - **Practical Project**: Write a detailed set of `iptables` rules that block all traffic except for specific services (like SSH or HTTP). \n\n- **Rule Ordering and Optimization**: How firewalls process rules in order (top-down or first-match). \n\n  - **What to Study**: Learn about rule order importance and how misordered rules can affect network security. \n  - **Practical Project**: Set up an optimized rule set using `firewalld` or `iptables` and test for efficiency by simulating various attacks. \n\n"
+            },
+            {
+              "Firewall Monitoring and Logging": "* **What to Study**: Study firewall logs to understand what traffic has been blocked or allowed. Learn how to analyze logs for suspicious activity. \n- **Practical Project**: Set up log monitoring for `iptables` or `pfSense` and integrate it with a SIEM tool like `Splunk` or `ELK Stack` to visualize and alert on blocked traffic."
+            },
+            {
+              "Virtual Firewalls": "* **What to Study**: Explore how virtual firewalls work in cloud environments (e.g., AWS, Azure) and how they differ from traditional firewalls. \n- **Practical Project**: Set up a virtual firewall in AWS using Security Groups and Network ACLs to secure a web application hosted on EC2."
+            },
+            {
+              "Firewall Logging and Auditing": "* **What to Study**: Learn how to analyze firewall logs, detect suspicious patterns, and generate security reports. Understand how to audit firewall rules for compliance and efficiency. \n- **Practical Project**: Use `Splunk` or `ELK` Stack to analyze logs from a `pfSense` or `Cisco ASA` firewall. Identify and mitigate possible misconfigurations and potential threats. \n"
+            },
+            {
+              "Firewall Rule Tuning": "* **What to Study**: Focus on optimizing firewall rules to ensure performance and avoid bottlenecks. Learn about network zones and segmentation for security. \n- **Practical Project**: Configure firewall rules to enforce least-privilege access, and simulate an attack _(e.g., port scanning)_ to see how well the rules protect the network. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "VPN - Virtual Private Networks",
+          "DESCRIPTION": "A VPN provides a secure communication tunnel over a public network, enabling secure transmission of data between remote devices and the corporate network.",
+          "SUBTOPICS": [
+            {
+              "Types of VPNs": "* **Remote Access VPNs**: Enables users to connect to the corporate network remotely over a secure tunnel. \n\n  - **What to Study**: Focus on VPN protocols like SSL and IPsec, and the difference between client-based and clientless VPNs. \n  - **Practical Project**: Set up an OpenVPN server to provide remote access for clients and configure client certificates for authentication. \n\n- **Site-to-Site VPNs**: Connects two or more networks securely over the internet. \n\n  - **What to Study**: Learn how site-to-site VPNs work using IPsec or GRE, and understand the concept of tunnel mode vs transport mode. \n  - **Practical Project**: Create a site-to-site VPN between two virtual networks using `strongSwan` on Linux. \n\n- **SSL VPNs**: Uses the Secure Sockets Layer protocol for creating encrypted connections. \n\n  - **What to Study**: Study the use of SSL/TLS for VPNs, and how clientless VPNs work. \n  - **Practical Project**: Set up an SSL VPN using `OpenVPN` or a cloud-based solution (AWS Client VPN). \n\n- **L2TP (Layer 2 Tunneling Protocol) VPNs**: Often combined with IPsec for secure tunneling. \n  - **What to Study**: Focus on L2TP and how it's used with IPsec for data encryption. \n  - **Practical Project**: Implement L2TP/IPsec VPN on a Linux server to provide secure tunneling for remote users. \n\n"
+            },
+            {
+              "VPN Encryption Protocols": "* **What to Study**: Understand protocols like IPsec, PPTP, L2TP, and SSL/TLS used in VPNs. Study how encryption and key exchange work in each protocol. \n- **Practical Project**: Set up IPsec VPN using strongSwan on Linux and inspect the encryption algorithms and key exchanges using Wireshark. \n"
+            },
+            {
+              "VPN Security Considerations": "* **What to Study**: Understand protocols like IPsec, PPTP, L2TP, and SSL/TLS used in VPNs. Study how encryption and key exchange work in each protocol. \n- **Practical Project**: Set up IPsec VPN using strongSwan on Linux and inspect the encryption algorithms and key exchanges using Wireshark. \n"
+            },
+            {
+              "VPN Protocols": "* **What to Study**: Explore different VPN protocols like IPsec, SSL/TLS, OpenVPN, and WireGuard. Learn about encryption techniques used in each. \n- **Practical Project**: Set up a site-to-site IPsec VPN and a remote access OpenVPN server. Compare their security, performance, and ease of use. \n"
+            },
+            {
+              "VPN Security Considerations": "* **What to Study**: Learn about split tunneling, VPN leaks, and how to secure VPNs from misconfiguration and attacks like man-in-the-middle _(MITM)_. \n- **Practical Project**: Configure a VPN server and attempt to perform traffic analysis from an attacker’s perspective. Set up DNS leak prevention mechanisms. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Network Segmentation and Zero Trust",
+          "DESCRIPTION": "For a Security Engineer, understanding how to segment networks and implement a Zero Trust architecture is crucial for minimizing attack surfaces.",
+          "SUBTOPICS": [
+            {
+              "Network Segmentation": "* **What to Study**: Learn how to divide networks into smaller segments _(e.g., DMZ, internal network)_ using VLANs and firewalls. \n- **Practical Project**: Design a network with segmentation for different departments _(e.g., HR, IT, Development)_ using VLANs and assign firewall rules that restrict inter-department traffic. \n"
+            },
+            {
+              "Zero Trust Architecture": "* **What to Study**: Study the principles of Zero Trust: \"**never trust, always verify,**\" and the tools and protocols that support this architecture. \n- **Practical Project**: Implement Zero Trust concepts using tools like Okta for identity management and micro-segmentation with network firewalls or SD-WAN. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": " Intrusion Detection and Prevention Systems (IDS/IPS)",
+          "DESCRIPTION": "IDS/IPS solutions monitor network traffic for suspicious activity, with the capability to either detect or automatically block threats.",
+          "SUBTOPICS": [
+            {
+              "Types of IDS/IPS": "* **Network-Based IDS/IPS**: Monitors network traffic for suspicious patterns and activities. \n- **What to Study**: Study how `NIDS/NIPS` detect threats by analyzing traffic and signature-based detection vs anomaly detection. \n- **Practical Project**: Install and configure Snort or Suricata as a Network IDS, and simulate attacks _(like port scans)_ to test its effectiveness. \n- **Host-Based IDS/IPS _(HIDS/HIPS)_**: Monitors a single host for suspicious activity. \n- **What to Study**: Learn how HIDS works by monitoring system logs, file integrity, and unusual system calls. \n- **Practical Project**: Set up OSSEC as a host-based IDS and configure alerts for suspicious activities like file modifications or login failures. \n"
+            },
+            {
+              "IDS/IPS Rule Creation": "* **What to Study**: Learn to write and customize detection rules for IDS/IPS using tools like Snort or `Suricata`. \n- **Practical Project**: Write custom Snort rules to detect specific types of attacks _(e.g., SQL injection attempts)_ and test them in a controlled environment. \n"
+            },
+            {
+              "False Positives and Tuning": "* **What to Study**: Study how to reduce false positives by tuning IDS/IPS rules and the importance of regular updates. \n- **Practical Project**: Configure `Snort/Suricata` to filter out false positives while still maintaining detection capabilities. Use testing tools like Metasploit to simulate attacks and fine-tune rules. \n"
+            },
+            {
+              "IDS/IPS Technologies": "* **What to Study**: Study the difference between IDS _(passive monitoring)_ and IPS _(active prevention)_ systems. Focus on signature-based and anomaly-based detection. \n- **Practical Project**: Deploy `Snort` or `Suricata` as an IDS on a network. Analyze traffic for malicious patterns and tune the detection rules for better accuracy. \n"
+            },
+            {
+              "Tuning IDS/IPS": "* **What to Study**: Learn how to reduce false positives and negatives in an IDS/IPS by customizing detection rules and signature updates. \n- **Practical Project**: Implement and fine-tune custom Snort rules based on specific threats you identify _(e.g., scanning attempts, malformed packets)_. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Secure Network Design",
+          "DESCRIPTION": "Network security design involves creating an architecture that protects a network from internal and external threats.",
+          "SUBTOPICS": [
+            {
+              "Network Segmentation": "* **What to Study**: Learn how to divide a network into isolated segments _(e.g., using VLANs)_ to limit the spread of attacks. \n- **Practical Project**: Design and implement network segmentation in a virtual environment using VLANs and configure an inter-VLAN firewall using `pfSense`. \n"
+            },
+            {
+              "Demilitarized Zones (DMZ)": "* **What to Study**: Study the concept of DMZs and how they are used to isolate external-facing services _(e.g., web servers)_ from the internal network. \n- **Practical Project**: Set up a DMZ using `pfSense`, place a web server in the DMZ, and configure firewall rules to allow external traffic while protecting the internal network. \n"
+            },
+            {
+              "Redundant and Resilient Networks": "* **What to Study**: Learn how to design a network with redundancy _(e.g., multiple firewalls, failover mechanisms)_ to ensure availability. \n- **Practical Project**: Design a resilient network using dual firewalls and a load balancer, and simulate failover scenarios. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Wireless Security",
+          "DESCRIPTION": "Securing wireless networks is vital for a Security Engineer.",
+          "SUBTOPICS": [
+            {
+              "Wi-Fi Security Protocols": "* **What to Study**: Study WEP, WPA, WPA2, WPA3, and the differences in their encryption protocols and vulnerabilities. \n- **Practical Project**: Set up a WPA3-secured Wi-Fi network and perform penetration testing on a WPA2 network using tools like `aircrack-ng` to demonstrate vulnerabilities. \n"
+            },
+            {
+              "Wireless Network Monitoring": "* **What to Study**: Learn about tools for monitoring wireless networks and detecting rogue access points and unauthorized devices. \n- **Practical Project**: Use `Kismet` to monitor wireless networks for unauthorized access points and analyze network traffic. n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Cloud Security (Aligned with AWS Certified Security)",
+      "DESCRIPTION": "As a Security Engineer, cloud security skills are crucial, especially if aiming for an AWS Certified Security specialization.",
+      "TOPICS": [
+        {
+          "TOPIC": "IAM (Identity and Access Management)",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "AWS IAM Basics": "* **What to Study**: Understand how AWS IAM works, covering users, groups, roles, and policies. Focus on least-privilege access. \n- **Practical Project**: Set up IAM policies for different roles _(e.g., developers, auditors)_ and enforce least-privilege access. \n"
+            },
+            {
+              "IAM Policy Analysis and Auditing": "* **What to Study**: Learn how to review and audit IAM policies for potential over-privileged access and best practices like MFA enforcement. \n- **Practical Project**: Use AWS IAM Access Analyzer to identify and mitigate risky permissions in your IAM policies. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Cloud Security Posture Management (CSPM)",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "Misconfiguration Prevention": "* **What to Study**: Understand common cloud misconfigurations like public S3 buckets, excessive permissions, and weak encryption settings. \n- **Practical Project**: Use AWS Security Hub and tools like `ScoutSuite` to scan for and remediate security misconfigurations in an AWS environment. \n"
+            },
+            {
+              "Cloud Compliance": "* **What to Study**: Learn about compliance frameworks _(e.g., CIS, SOC 2, GDPR)_ and how to use AWS Config to monitor compliance. \n- **Practical Project**: Set up AWS Config rules to monitor compliance with CIS AWS Foundations Benchmark and generate compliance reports. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Encryption and Key Management in Cloud",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "AWS Key Management Service (KMS)": "* **What to Study**: Learn how to use AWS KMS for encryption and key management, including key rotation and auditing. \n- **Practical Project**: Encrypt an S3 bucket using AWS KMS and configure access policies. Audit the key usage and rotate keys periodically. \n"
+            },
+            {
+              "Data Encryption in Transit and at Rest": "* **What to Study**: Study how encryption works for data at rest _(e.g., EBS volumes, S3 buckets)_ and data in transit _(e.g., TLS for APIs)_. \n- **Practical Project**: Enable encryption on an EBS volume and S3 bucket. Use CloudTrail to monitor access to encrypted data. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Application Security",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "Secure Coding Practices",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "Input Validation": "* **What to Study**: Study techniques for validating and sanitizing user input to prevent common vulnerabilities like SQL injection and cross-site scripting _(XSS)_. \n- **Practical Project**: Develop a web application in Python or JavaScript that securely validates user input to prevent XSS and SQL injection. \n"
+            },
+            {
+              "Error Handling": "* **What to Study**: Learn about secure error handling to avoid revealing sensitive information in error messages. \n- **Practical Project**: Build a secure error logging system in an application and handle errors without revealing stack traces to the user. \n"
+            }
+          ]
+        },
+        {
+          "TOPIC": "Application Penetration Testing",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "OWASP Top 10 Vulnerabilities": "* **What to Study**: Learn about the OWASP Top 10 vulnerabilities, such as broken access control, security misconfiguration, and sensitive data exposure. \n- **Practical Project**: Use `Burp Suite` or `OWASP ZAP` to scan a web application for OWASP Top 10 vulnerabilities and mitigate the findings. \n"
+            },
+            {
+              "Automated Security Testing": "* **What to Study**: Learn about tools and techniques for integrating security testing into CI/CD pipelines, including tools like `Snyk`, `SonarQube`, or `Bandit`. \n- **Practical Project**: Set up an automated security testing pipeline that runs static analysis on a codebase and reports vulnerabilities. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Identity and Access Management (IAM)",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "Principles of IAM": "* **What to Study**: Learn about the fundamental principles of identity and access management, including authentication _(verifying identity)_, authorization _(permissions based on identity)_, and the principle of least privilege. \n- **Focus On**: Role-based access control _(RBAC)_, policies, and attribute-based access control _(ABAC)_. \n- **Practical Project**: Design an IAM architecture for a small-to-medium enterprise, implementing least-privilege access for users, roles, and service accounts using both on-prem solutions _(like LDAP)_ and cloud solutions _(like AWS IAM)_. \n"
+            },
+            {
+              "Single Sign-On (SSO)": "* **What to Study**: Learn how SSO works using protocols like SAML _(Security Assertion Markup Language)_, OAuth2, and OpenID Connect. \n- **Focus On**: Integration of SSO with cloud services and third-party applications. \n- **Practical Project**: Set up an SSO solution using `Okta` or `Keycloak`. Implement it in a lab environment with multiple applications, ensuring proper authentication flows and secure token exchange. \n"
+            },
+            {
+              "Multi-Factor Authentication (MFA)": "* **What to Study**: Understand how MFA enhances security by requiring two or more verification factors. \n- **Focus On**: Implementing MFA on sensitive systems, using tools like Google Authenticator, Duo, or Yubikey. \n- **Practical Project**: Configure MFA for AWS, SSH access to Linux servers, and for GitHub accounts. Analyze the balance between security and usability. \n"
+            },
+            {
+              "Federated Identity Management": "* **What to Study**: Study how federated identity allows for cross-domain access using standards like OAuth2, SAML, and OpenID Connect. \n- **Focus On**: The relationship between the identity provider _(IdP)_ and service provider _(SP)_. \n- **Practical Project**: Set up federated authentication using Azure AD with Office 365 or AWS Cognito to authenticate users from different organizations. \n"
+            },
+            {
+              "Privileged Access Management (PAM)": "* **What to Study**: Learn how to secure, control, and audit privileged accounts to minimize attack vectors. \n- **Focus On**: Tools like CyberArk, BeyondTrust, or open-source solutions for PAM. \n- **Practical Project**: Implement a PAM system to manage and audit root/admin-level access across a network of servers and critical systems. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Incident Response & Forensics",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "Incident Response Frameworks": "* **What to Study**: Learn the six phases of incident response: preparation, identification, containment, eradication, recovery, and lessons learned. \n- **Focus On**: Following a standardized framework like NIST 800-61 or SANS. \n- **Practical Project**: Create an incident response playbook for a ransomware attack. Simulate an incident in a lab environment and perform all phases, including documentation and reporting. \n"
+            },
+            {
+              "Digital Forensics": "* **What to Study**: Understand how to collect, preserve, and analyze digital evidence while maintaining the chain of custody. \n- **Focus On**: Tools like `Autopsy`, `FTK Imager`, and `Sleuth Kit`. \n- **Practical Project**: Analyze a compromised system for malware artifacts and suspicious network traffic. Use tools to recover deleted files and analyze system logs. \n"
+            },
+            {
+              "Log Analysis and Threat Detection": "* **What to Study**: Learn how to collect, correlate, and analyze logs to detect incidents in real-time. \n- **Focus On**: SIEM platforms like `Splunk`, `ELK Stack`, and cloud-native solutions _(AWS CloudWatch, Azure Sentinel)_. \n- **Practical Project**: Set up an ELK stack to monitor a web server. Write custom alerting rules for brute-force attacks or other suspicious behavior and respond to alerts. \n"
+            },
+            {
+              "Malware Analysis": "* **What to Study**: Study static and dynamic malware analysis to understand how malware behaves and spreads. \n- **Focus On**: Tools like Cuckoo Sandbox, IDA Pro, or Ghidra. \n- **Practical Project**: Analyze a malware sample in a sandbox environment. Document the malware’s behavior, including its persistence mechanisms and command-and-control _(C2)_ channels. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Governance, Risk, and Compliance (GRC)",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "Security Governance and Frameworks": "* **What to Study**: Learn about frameworks like ISO 27001, COBIT, and NIST. Understand how governance policies drive security strategy. \n- **Focus On**: Creating a security governance model for an organization. \n- **Practical Project**: Develop a basic security governance framework based on NIST standards for a fictional company, detailing policies for risk management, incident response, and continuous improvement. \n"
+            },
+            {
+              "Risk Management": "* **What to Study**: Understand how to identify, assess, and mitigate security risks using methods like risk assessments and qualitative/quantitative risk analysis. \n- **Focus On**: Risk treatment and mitigation strategies. \n- **Practical Project**: Conduct a risk assessment for a web application, identify potential threats, and document the impact and mitigation measures using a risk matrix. \n"
+            },
+            {
+              "Compliance and Regulatory Requirements": "* **What to Study**: Study key compliance requirements such as GDPR, HIPAA, PCI-DSS, and SOC 2. \n* **Focus On**: How to audit compliance with these standards. \n* **Practical Project**: Create a checklist for ensuring compliance with PCI-DSS for a company processing online payments. Perform a mock audit and report any gaps. \n"
+            },
+            {
+              "Security Auditing and Continuous Monitoring": "* **What to Study**: Learn how to perform audits, including internal audits and third-party audits. \n- **Focus On**: Tools like `Nessus`, `OpenVAS`, and AWS Security Hub for continuous compliance. \n- **Practical Project**: Audit a cloud infrastructure using AWS Config and Security Hub. Identify non-compliant resources and create an action plan for remediation. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Advanced Topics (e.g., Zero Trust, AI in Security)",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "Zero Trust Architecture": "* **What to Study**: Understand the principles of Zero Trust: no inherent trust based on network location, continuous verification of all resources, and micro-segmentation. \n- **Focus On**: Tools like `Okta` for identity, `Palo Alto Networks` for network segmentation, and multi-factor authentication. \n- **Practical Project**: Design a Zero Trust architecture for a company, including micro-segmentation, continuous authentication, and monitoring. \n"
+            },
+            {
+              "AI and Machine Learning in Security": "* **What to Study**: Learn how AI is used in anomaly detection, threat hunting, and automating response actions. \n- **Focus On**: AI-driven security tools like `Darktrace`, `Cortex XDR`, and anomaly detection models. \n- **Practical Project**: Use a machine learning model _(like `TensorFlow` or `scikit-learn`_)* to detect anomalies in network traffic. Train the model using network logs and deploy it in a lab environment for real-time monitoring. \n"
+            },
+            {
+              "Blockchain for Security": "* **What to Study**: Study how blockchain can enhance security in areas like identity management, secure transactions, and decentralized authentication. \n- **Focus On**: Smart contracts, tamper-proof logging, and blockchain's role in secure digital identities. \n- **Practical Project**: Implement a blockchain-based identity management solution. Build a prototype using `Ethereum` or `Hyperledger` to manage user credentials in a secure, decentralized way. \n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CATEGORY": "Certifications Preparation (AWS Certified Security & CISSP)",
+      "DESCRIPTION": "",
+      "TOPICS": [
+        {
+          "TOPIC": "",
+          "DESCRIPTION": "",
+          "SUBTOPICS": [
+            {
+              "AWS Certified Security – Specialty": "* **What to Study**: Focus on AWS security services like IAM, KMS, CloudTrail, Config, and Shield. Understand how to secure AWS workloads and ensure compliance with security best practices. \n- **Focus On**: Securing VPCs, encrypting data at rest _(KMS)_, and auditing cloud environments. \n- **Practical Project**: Build a secure multi-tier architecture in AWS. Implement security controls, audit the environment using AWS Config, and generate compliance reports. \n"
+            },
+            {
+              "CISSP (Certified Information Systems Security Professional)": "* **What to Study**: Study the eight domains of CISSP: Security and Risk Management, Asset Security, Security Architecture, Communications and Network Security, Identity and Access Management, Security Assessment, Security Operations, and Software Development Security. \n- **Focus On**: Concepts that overlap with your practical work in networking, identity management, and governance. \n- **Practical Project**: Build study notes and flashcards for each domain. Create mock scenarios where you apply concepts like risk management, access control, and cryptography to real-world problems. \n"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
