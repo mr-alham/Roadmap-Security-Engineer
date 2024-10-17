@@ -7,8 +7,8 @@ import (
 
 	"errors"
 
-	"github.com/charmbracelet/glamour"
-	"github.com/charmbracelet/glamour/ansi"
+	// "github.com/charmbracelet/glamour"
+	// "github.com/charmbracelet/glamour/ansi"
 
 	"os"
 	"strconv"
@@ -22,15 +22,19 @@ type RoadmapJsonData struct {
 		Category    string `json:"CATEGORY"`
 		Description string `json:"DESCRIPTION"`
 		Topics      []struct {
-			Topic       string              `json:"TOPIC"`
-			Description string              `json:"DESCRIPTION"`
-			Subtopics   []map[string]string `json:"SUBTOPICS"`
+			Topic       string `json:"TOPIC"`
+			Description string `json:"DESCRIPTION"`
+			Subtopics   []map[string]struct {
+				WhatToStudy      string `json:"What to Study"`
+				PracticalProject string `json:"Practical Project"`
+			} `json:"SUBTOPICS"`
 		} `json:"TOPICS"`
 	} `json:"CATEGORIES"`
 }
 
 // File paths
-var roadmapJsonFile string = "/usr/local/etc/roadmap-sec-engineer.d/roadmap.json"
+// var roadmapJsonFile string = "/usr/local/etc/roadmap-sec-engineer.d/roadmap.json"
+var roadmapJsonFile string = "/home/alham/Projects/Roadmap-Security-Engineer/roadmap-sec-engineer.d/roadmap.json"
 var learningStateFile string = "/usr/local/etc/roadmap-sec-engineer.d/learning-state.state"
 
 func main() {
@@ -135,135 +139,136 @@ func show_default() {
 
 	width := terminalWidth()
 
-	customStylingConfig := ansi.StyleConfig{
-		Document: ansi.StyleBlock{
-			StylePrimitive: ansi.StylePrimitive{
-				// BlockPrefix: "\n",
-				// BlockSuffix: "\n",
-				Color: stringPtr("231"),
-			},
-			Margin: uintPtr(0),
-		},
-		BlockQuote: ansi.StyleBlock{
-			StylePrimitive: ansi.StylePrimitive{
-				Color:  stringPtr("229"),
-				Italic: boolPtr(true),
-				Faint:  boolPtr(true),
-			},
-			Indent: uintPtr(2),
-			// IndentToken: stringPtr("│"),
-		},
-		Paragraph: ansi.StyleBlock{
-			StylePrimitive: ansi.StylePrimitive{
-				Color:  stringPtr("229"),
-				Italic: boolPtr(true),
-			},
-			Indent: uintPtr(2),
-		},
-		Heading: ansi.StyleBlock{
-			StylePrimitive: ansi.StylePrimitive{
-				// BlockSuffix: "\n",
-				Color: stringPtr("183"),
-				Bold:  boolPtr(true),
-			},
-		},
-		H2: ansi.StyleBlock{
-			StylePrimitive: ansi.StylePrimitive{
-				Prefix: "🎯 ",
-				// Suffix: " 🞘🞘",
-				// Color:  stringPtr("38"),
-			},
-			Indent: uintPtr(1),
-		},
-		Strikethrough: ansi.StylePrimitive{
-			CrossedOut: boolPtr(true),
-		},
-		Emph: ansi.StylePrimitive{
-			Color:  stringPtr("222"),
-			Italic: boolPtr(true),
-		},
-		Strong: ansi.StylePrimitive{
-			Bold:  boolPtr(true),
-			Color: stringPtr("222"),
-		},
-		Item: ansi.StylePrimitive{
-			BlockPrefix: "📑 ",
-			Color:       stringPtr("159"),
-			// Indent: uintPtr(4),
-		},
-		Enumeration: ansi.StylePrimitive{
-			BlockPrefix: ". ",
-		},
-		Task: ansi.StyleTask{
-			StylePrimitive: ansi.StylePrimitive{},
-			Ticked:         "[✓] ",
-			Unticked:       "[ ] ",
-		},
-		Link: ansi.StylePrimitive{
-			Color:     stringPtr("5"),
-			Underline: boolPtr(true),
-		},
-		LinkText: ansi.StylePrimitive{
-			Color: stringPtr("30"),
-			Bold:  boolPtr(true),
-		},
-		Image: ansi.StylePrimitive{
-			Color:     stringPtr("212"),
-			Underline: boolPtr(true),
-		},
-		ImageText: ansi.StylePrimitive{
-			Color:  stringPtr("243"),
-			Format: "Image: {{.text}} →",
-		},
-		Code: ansi.StyleBlock{
-			StylePrimitive: ansi.StylePrimitive{
-				BlockPrefix:     "'",
-				BlockSuffix:     "'",
-				Prefix:          "",
-				Suffix:          "",
-				Color:           stringPtr("120"),
-				BackgroundColor: stringPtr("236"),
-				Italic:          boolPtr(true),
-			},
-		},
-		Table: ansi.StyleTable{
-			StyleBlock: ansi.StyleBlock{
-				StylePrimitive: ansi.StylePrimitive{},
-			},
-			CenterSeparator: stringPtr("┼"),
-			ColumnSeparator: stringPtr("│"),
-			RowSeparator:    stringPtr("─"),
-		},
-		DefinitionDescription: ansi.StylePrimitive{
-			BlockPrefix: "\n🠶 ",
-		},
-	}
+	// customStylingConfig := ansi.StyleConfig{
+	// 	Document: ansi.StyleBlock{
+	// 		StylePrimitive: ansi.StylePrimitive{
+	// 			// BlockPrefix: "\n",
+	// 			// BlockSuffix: "\n",
+	// 			Color: stringPtr("229"),
+	// 		},
+	// 		Margin: uintPtr(0),
+	// 	},
+	// 	BlockQuote: ansi.StyleBlock{
+	// 		StylePrimitive: ansi.StylePrimitive{
+	// 			Color: stringPtr("229"),
+	// 			// Italic: boolPtr(true),
+	// 			// Faint:  boolPtr(true),
+	// 		},
+	// 		Indent: uintPtr(2),
+	// 		// IndentToken: stringPtr("│"),
+	// 	},
+	// 	Paragraph: ansi.StyleBlock{
+	// 		StylePrimitive: ansi.StylePrimitive{
+	// 			Color:  stringPtr("231"),
+	// 			Italic: boolPtr(true),
+	// 		},
+	// 		Indent: uintPtr(2),
+	// 	},
+	// 	Heading: ansi.StyleBlock{
+	// 		StylePrimitive: ansi.StylePrimitive{
+	// 			// BlockSuffix: "\n",
+	// 			Color: stringPtr("183"),
+	// 			Bold:  boolPtr(true),
+	// 		},
+	// 	},
+	// 	H2: ansi.StyleBlock{
+	// 		StylePrimitive: ansi.StylePrimitive{
+	// 			Prefix: "🎯 ",
+	// 			// Suffix: " 🞘🞘",
+	// 			// Color:  stringPtr("38"),
+	// 		},
+	// 		Indent: uintPtr(1),
+	// 	},
+	// 	Strikethrough: ansi.StylePrimitive{
+	// 		CrossedOut: boolPtr(true),
+	// 	},
+	// 	Emph: ansi.StylePrimitive{
+	// 		Color:  stringPtr("222"),
+	// 		Italic: boolPtr(true),
+	// 	},
+	// 	Strong: ansi.StylePrimitive{
+	// 		Bold:  boolPtr(true),
+	// 		Color: stringPtr("222"),
+	// 	},
+	// 	Item: ansi.StylePrimitive{
+	// 		// BlockPrefix: "📑 ",
+	// 		Color: stringPtr("159"),
+	// 		// Indent: uintPtr(4),
+	// 	},
+	// 	Enumeration: ansi.StylePrimitive{
+	// 		BlockPrefix: ". ",
+	// 	},
+	// 	Task: ansi.StyleTask{
+	// 		StylePrimitive: ansi.StylePrimitive{},
+	// 		Ticked:         "[✓] ",
+	// 		Unticked:       "[ ] ",
+	// 	},
+	// 	Link: ansi.StylePrimitive{
+	// 		Color:     stringPtr("5"),
+	// 		Underline: boolPtr(true),
+	// 	},
+	// 	LinkText: ansi.StylePrimitive{
+	// 		Color: stringPtr("30"),
+	// 		Bold:  boolPtr(true),
+	// 	},
+	// 	Image: ansi.StylePrimitive{
+	// 		Color:     stringPtr("212"),
+	// 		Underline: boolPtr(true),
+	// 	},
+	// 	ImageText: ansi.StylePrimitive{
+	// 		Color:  stringPtr("243"),
+	// 		Format: "Image: {{.text}} →",
+	// 	},
+	// 	Code: ansi.StyleBlock{
+	// 		StylePrimitive: ansi.StylePrimitive{
+	// 			BlockPrefix:     "'",
+	// 			BlockSuffix:     "'",
+	// 			Prefix:          "",
+	// 			Suffix:          "",
+	// 			Color:           stringPtr("120"),
+	// 			BackgroundColor: stringPtr("236"),
+	// 			Italic:          boolPtr(true),
+	// 		},
+	// 	},
+	// 	Table: ansi.StyleTable{
+	// 		StyleBlock: ansi.StyleBlock{
+	// 			StylePrimitive: ansi.StylePrimitive{},
+	// 		},
+	// 		CenterSeparator: stringPtr("┼"),
+	// 		ColumnSeparator: stringPtr("│"),
+	// 		RowSeparator:    stringPtr("─"),
+	// 	},
+	// 	DefinitionDescription: ansi.StylePrimitive{
+	// 		BlockPrefix: "\n🠶 ",
+	// 	},
+	// }
 
-	r, err := glamour.NewTermRenderer(
-		glamour.WithStandardStyle("dracula"),
-		glamour.WithEmoji(),
-		glamour.WithPreservedNewLines(),
-		glamour.WithWordWrap(width),
-		glamour.WithStyles(customStylingConfig),
-	)
+	// r, err := glamour.NewTermRenderer(
+	// 	glamour.WithStandardStyle("dracula"),
+	// 	glamour.WithEmoji(),
+	// 	glamour.WithPreservedNewLines(),
+	// 	glamour.WithWordWrap(width),
+	// 	glamour.WithStyles(customStylingConfig),
+	// )
 	if err != nil {
 		fmt.Println("Error: formatting the text!")
 	}
 
 	tempVar := *progress
 	// Progress := *progress
-	var Category, CategoryDescription, Topic, TopicDescription, SubTopic, SubTopicDescription string
+	var Category, CategoryDescription, Topic, TopicDescription, SubTopic, StudyDescription, ProjectDescription string
 
 	for i := 0; i < len(roadmapData.Categories); i++ {
 		for j := 0; j < len(roadmapData.Categories[i].Topics); j++ {
-			if len(roadmapData.Categories[i].Topics[j].Subtopics) > tempVar {
+			if tempVar < len(roadmapData.Categories[i].Topics[j].Subtopics) {
 
 				a := roadmapData.Categories[i].Topics[j].Subtopics[tempVar]
 
 				for key, value := range a {
 
 					SubTopic = key
-					SubTopicDescription = value
+					StudyDescription = value.WhatToStudy
+					ProjectDescription = value.PracticalProject
 
 				}
 
@@ -272,25 +277,24 @@ func show_default() {
 				Topic = roadmapData.Categories[i].Topics[j].Topic
 				TopicDescription = roadmapData.Categories[i].Topics[j].Description
 
-				RawResult := CategoryDescription +
-					"\n  ## " + Topic +
-					"\n > " + TopicDescription
-
 				halfWidth := strings.Repeat(" ", (width-30)/2)
+
 				fmt.Println("\n", halfWidth, "\033[0;38;5;159m────── \033[0;38;5;210;1m✨ Day", *progress, "✨ \033[0;38;5;159m──────")
 
 				halfWidth = strings.Repeat("─", (width-len(Category)-8)/2)
-				result, _ := r.Render(RawResult)
 
 				fmt.Print("\033[0;38;5;159;1m", halfWidth, " 🚀 \033[0;38;5;183;1m", Category, " 🚀 \033[0;38;5;159;1m", halfWidth)
-				fmt.Println(result)
+				fmt.Println("\033[0;38;5;229m    " + CategoryDescription)
+				fmt.Println("\n\033[0;38;5;183;1m 🎯 " + Topic)
+				fmt.Println("\033[0;38;5;229m    " + TopicDescription)
 
 				halfWidth = strings.Repeat(" ", (width-len(SubTopic)-7)/2)
-				fmt.Print(halfWidth, "\033[0;38;5;183;1;4m📌 ", SubTopic, "\033[0;m")
 
-				result, _ = r.Render(SubTopicDescription)
-				fmt.Println(result)
-
+				fmt.Println("\n"+halfWidth, "\033[0;38;5;212;1;4m📌 ", SubTopic, "\033[0;m")
+				fmt.Println("\033[0;38;5;120;1m ❇️What to study: ")
+				fmt.Println("\033[0;38;5;231m    " + StudyDescription)
+				fmt.Println("\n\033[0;38;5;120;1m ❇️Practical Project: ")
+				fmt.Println("\033[0;38;5;231m    " + ProjectDescription)
 				fmt.Println(strings.Repeat("\033[0;38;5;159m─", width))
 
 				os.Exit(0)
@@ -314,10 +318,6 @@ func terminalWidth() int {
 	}
 	return width
 }
-
-func stringPtr(s string) *string { return &s }
-func uintPtr(u uint) *uint       { return &u }
-func boolPtr(b bool) *bool       { return &b }
 
 // by reading the learning-state.state file get the progress of current learning
 func getLearningProgress() (*int, error) {
