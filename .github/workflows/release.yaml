@@ -4,10 +4,14 @@ name: Release the build to GitHub
 on:
   push:
     branches: main
-    paths: main.go
+    paths:
+      - main.go
+      - roadmap.json
   pull_request:
     branches: main
-    paths: main.go
+    paths:
+      -  main.go
+      - roadmap.json
 
 jobs:
   Build-and-Release:
